@@ -1,0 +1,23 @@
+@host = https://localhost:7168
+
+### Pre-submission document verification
+POST {{host}}/api/screening
+Content-Type: application/json
+
+{
+  "applicationId": "ATN-12345",
+  "mode": "DocVerification"
+}
+
+### Post-submission screening
+POST {{host}}/api/screening
+Content-Type: application/json
+
+{
+  "applicationId": "ATN-12345",
+  "mode": "Screening"
+}
+
+### Read persisted comments
+GET {{host}}/api/screening/comments
+Accept: application/json
